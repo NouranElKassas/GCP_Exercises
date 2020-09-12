@@ -14,10 +14,10 @@ go to google cloud shell
 set compute engine to be in us-centeral1-a
 ```gcloud config set compute/zone us-central1-a```
 
-clone a repo
+clone a repo https://github.com/googlecodelabs/orchestrate-with-kubernetes.git
 ```git clone https://github.com/googlecodelabs/orchestrate-with-kubernetes.git```
 
-go to
+go to orchestrate-with-kubernetes
 ```cd orchestrate-with-kubernetes/kubernetes```
 
 create a container cluster
@@ -29,7 +29,7 @@ Explain Deployment
 Explain deployment metadata
 ```kubectl explain deployment.metadata.name```
 
-Read a file
+Read a file  deployments/auth.yaml
 ```cat deployments/auth.yaml```
 
 create a kubectl deploymet
@@ -47,10 +47,14 @@ create service authuntication
 configure ngnix-frontend
 ```kubectl create configmap nginx-frontend-conf --from-file=nginx/frontend.conf```
 
-kubectl create secret generic tls-certs --from-file tls/
+create secret generic tls-certs
+```kubectl create secret generic tls-certs --from-file tls/```
 
-```kubectl create -f deployments/frontend.yaml
-```kubectl create -f services/frontend.yaml
+create deployments/frontend.yaml
+```kubectl create -f deployments/frontend.yaml```
+
+create -f services/frontend.yaml
+```kubectl create -f services/frontend.yaml```
 
 show frontend services in kubectl
 ```kubectl get services frontend```
